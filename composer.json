@@ -1,0 +1,18 @@
+{
+    "name": "deoomen/please-dont-swear",
+    "description": "add desc here",
+    "type": "library",
+    "keywords": [
+        ""
+    ],
+    "readme": "./README.md",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "deoomen",
+            "email": "deoomen@protonmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
