@@ -2,9 +2,7 @@
     "name": "deoomen/please-dont-swear",
     "description": "add desc here",
     "type": "library",
-    "keywords": [
-        ""
-    ],
+    "keywords": [""],
     "readme": "./README.md",
     "license": "MIT",
     "authors": [
@@ -14,5 +12,12 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": "^7.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PleaseDontSwear\\": "src/"
+        }
+    }
 }
