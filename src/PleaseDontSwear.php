@@ -4,8 +4,8 @@ namespace PleaseDontSwear;
 
 class PleaseDontSwear
 {
-    public function test()
+    public function test(): string
     {
-        echo 'PleaseDontSwear->test';
+        return 'PleaseDontSwear->test';
     }
 }
