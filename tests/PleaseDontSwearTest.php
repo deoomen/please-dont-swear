@@ -31,10 +31,25 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * @test
+     * @dataProvider textPlProvider
+     *
+     * @param string $vulgarText
+     * @param string $censoredText
+     * @return void
      */
-    public function test_nothing_ReturnsString(): void
+    public function testCensor_VulgarText_ReturnsCensoredText(string $vulgarText, string $censoredText): void
     {
-        $this->assertSame('PleaseDontSwear->test', $this->_PleaseDontSwear->test());
+        $this->assertSame(
+            $censoredText,
+            $this->_PleaseDontSwear->censor($vulgarText)
+        );
+    }
+
+    public function textPlProvider(): array
+    {
+        return [
+            ["kurwa", "*****"],
+            ["o ja pierdole", "o ja ********"]
+        ];
     }
 }
