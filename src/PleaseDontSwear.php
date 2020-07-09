@@ -40,21 +40,20 @@ class PleaseDontSwear
     {
         $censoredText = $textToCensor;
         foreach ($this->_swears as $swear) {
-            $position = \strpos($censoredText, $swear);
-            if ($position === false) {
-                continue;
-            }
+            $pattern = "/\b{$swear}\b/i";
+            $position = \preg_match($pattern, $censoredText);
+            if ($position === 1) {
+                $censor = '';
+                for ($i = 0; $i < \strlen($swear); $i++) {
+                    $censor .= '*';
+                }
 
-            $censor = "";
-            for ($i = 0; $i < \strlen($swear); $i++) {
-                $censor .= "*";
+                $censoredText = \preg_replace(
+                    $pattern,
+                    $censor,
+                    $censoredText
+                );
             }
-
-            $censoredText = \preg_replace(
-                "/\b{$swear}\b/i",
-                $censor,
-                $censoredText
-            );
         }
 
         return $censoredText;
