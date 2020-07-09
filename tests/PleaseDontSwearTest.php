@@ -84,7 +84,10 @@ class PleaseDontSwearTest extends TestCase
             ["kurwa", "*****"],
             ["o ja pierdole", "o ja ********"],
             ["chuj z tym", "**** z tym"],
-            ["kurwa ja jebie, chuj z tym, pierdole", "***** ja *****, **** z tym, ********"]
+            ["kurwa ja jebie, chuj z tym, pierdole", "***** ja *****, **** z tym, ********"],
+            ["", ""],
+            ["dobre słówka", "dobre słówka"],
+            ["dobra KurWA", "dobra *****"]
         ];
     }
 }
