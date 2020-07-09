@@ -1,8 +1,8 @@
 {
     "name": "deoomen/please-dont-swear",
-    "description": "add desc here",
+    "description": "A simple package that allows you to easily censor text",
     "type": "library",
-    "keywords": [""],
+    "keywords": ["curse", "swear", "censor", "censorship", "bad word"],
     "readme": "./README.md",
     "license": "MIT",
     "authors": [
