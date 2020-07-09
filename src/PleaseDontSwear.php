@@ -3,7 +3,6 @@
  * PleaseDontSwear package main file
  * PHP Version: 7.4
  *
- * @category Description
  * @package  PleaseDontSwear
  * @author   deoomen <deoomen@protonmail.com>
  * @license  https://opensource.org/licenses/MIT MIT
@@ -14,9 +13,16 @@ namespace PleaseDontSwear;
 
 /**
  * PleaseDontSwear main class
+ *
+ * @version Release: 1.0.0
  */
 class PleaseDontSwear
 {
+    /**
+     * Array of swears
+     *
+     * @var array $_swears
+     */
     private array $_swears;
 
     /**
