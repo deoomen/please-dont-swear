@@ -3,12 +3,14 @@
     "description": "A simple package that allows you to easily censor text",
     "type": "library",
     "keywords": ["curse", "swear", "censor", "censorship", "bad word"],
+    "homepage": "https://github.com/deoomen/please-dont-swear",
     "readme": "./README.md",
     "license": "MIT",
     "authors": [
         {
             "name": "deoomen",
-            "email": "deoomen@protonmail.com"
+            "email": "deoomen@protonmail.com",
+            "role": "developer"
         }
     ],
     "minimum-stability": "stable",
