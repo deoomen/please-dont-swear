@@ -3,10 +3,10 @@
  * PleaseDontSwear package main file
  * PHP Version: 7.4
  *
- * @package  PleaseDontSwear
- * @author   deoomen <deoomen@protonmail.com>
- * @license  https://opensource.org/licenses/MIT MIT
- * @link     https://github.com/deoomen/please-dont-swear
+ * @package PleaseDontSwear
+ * @author  deoomen <deoomen@protonmail.com>
+ * @license https://opensource.org/licenses/MIT MIT
+ * @link    https://github.com/deoomen/please-dont-swear
  */
 
 namespace PleaseDontSwear;
@@ -47,8 +47,7 @@ class PleaseDontSwear
         $censoredText = $textToCensor;
         foreach ($this->_swears as $swear) {
             $pattern = "/\b{$swear}\b/i";
-            $position = \preg_match($pattern, $censoredText);
-            if ($position === 1) {
+            if (\preg_match($pattern, $censoredText) === 1) {
                 $censor = '';
                 for ($i = 0; $i < \strlen($swear); $i++) {
                     $censor .= '*';
