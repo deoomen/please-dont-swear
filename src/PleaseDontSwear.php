@@ -63,4 +63,15 @@ class PleaseDontSwear
 
         return $censoredText;
     }
+
+    public function checkForSwears(string $text): bool
+    {
+        foreach ($this->_swears as $swear) {
+            if (\preg_match("/\b{$swear}\b/i", $text) === 1) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
