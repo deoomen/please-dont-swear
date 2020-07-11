@@ -22,8 +22,6 @@ class PleaseDontSwearTest extends TestCase
 
     /**
      * Initialize class
-     *
-     * @return void
      */
     public function setUp(): void
     {
@@ -32,8 +30,6 @@ class PleaseDontSwearTest extends TestCase
 
     /**
      * Destroy class
-     *
-     * @return void
      */
     public function tearDown(): void
     {
@@ -44,8 +40,6 @@ class PleaseDontSwearTest extends TestCase
      * Test construct
      *
      * @test
-     *
-     * @return void
      */
     public function canBeCreated(): void
     {
@@ -56,29 +50,9 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Test censor method
-     *
-     * @param string $vulgarText   text to censor
-     * @param string $censoredText cenzored text
-     *
-     * @dataProvider textPlProvider
-     *
-     * @return void
-     */
-    public function testCensorVulgarTextReturnsCensoredText(string $vulgarText, string $censoredText): void
-    {
-        $this->assertSame(
-            $censoredText,
-            $this->_PleaseDontSwear->censor($vulgarText)
-        );
-    }
-
-    /**
      * Test cases for pl
-     *
-     * @return array
      */
-    public function textPlProvider(): array
+    public function textPlCensorProvider(): array
     {
         return [
             ["kurwa", "*****"],
@@ -89,5 +63,45 @@ class PleaseDontSwearTest extends TestCase
             ["dobre słówka", "dobre słówka"],
             ["dobra KurWA", "dobra *****"]
         ];
+    }
+
+    /**
+     * Test censor method
+     *
+     * @dataProvider textPlCensorProvider
+     */
+    public function testCensor_VulgarText_ReturnsCensoredText(string $vulgarText, string $censoredText): void
+    {
+        $this->assertSame(
+            $censoredText,
+            $this->_PleaseDontSwear->censor($vulgarText)
+        );
+    }
+
+    public function textPlForCheckProvider(): array
+    {
+        return [
+            ["kurwa", true],
+            ["o ja pierdole", true],
+            ["chuj z tym", true],
+            ["kurwa ja jebie, chuj z tym, pierdole", true],
+            ["", false],
+            ["dobre słówka", false],
+            ["nie ma tu nic złego", false],
+            ["dobra KurWA", true]
+        ];
+    }
+
+    /**
+     * Test checkForSwears method
+     *
+     * @dataProvider textPlForCheckProvider
+     */
+    public function testCheckForSwears_Swears_ReturnsTrue(string $textToCheck, bool $textHasSwears): void
+    {
+        $this->assertSame(
+            $textHasSwears,
+            $this->_PleaseDontSwear->checkForSwears($textToCheck)
+        );
     }
 }
