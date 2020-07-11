@@ -1,7 +1,7 @@
 <?php
 /**
- * PleaseDontSwear package main file
- * PHP Version: 7.4
+ * PleaseDontSwear package main file.
+ * PHP Version: 7.4.
  *
  * @package PleaseDontSwear
  * @author  deoomen <deoomen@protonmail.com>
@@ -12,21 +12,19 @@
 namespace PleaseDontSwear;
 
 /**
- * PleaseDontSwear main class
+ * PleaseDontSwear main class.
  *
  * @version Release: 1.0.0
  */
 class PleaseDontSwear
 {
     /**
-     * Array of swears
-     *
-     * @var array $_swears
+     * Array of swears.
      */
     private array $_swears;
 
     /**
-     * Initially loads dictionary
+     * Initially loads dictionary.
      */
     public function __construct()
     {
@@ -36,11 +34,11 @@ class PleaseDontSwear
     }
 
     /**
-     * Censor the text by fully masking swears
+     * Censor the text by fully masking swears.
      *
-     * @param string $textToCensor Text you want to be censored
+     * @param string $textToCensor Text you want to be censored.
      *
-     * @return string
+     * @return string Returns censored text.
      */
     public function censor(string $textToCensor): string
     {
@@ -64,6 +62,13 @@ class PleaseDontSwear
         return $censoredText;
     }
 
+    /**
+     * Checks if the text contains bad words.
+     *
+     * @param string $text Text to check if it contains bad words.
+     *
+     * @return bool Returns `true` if text contain any bad word, otherwise returns `false`.
+     */
     public function checkForSwears(string $text): bool
     {
         foreach ($this->_swears as $swear) {

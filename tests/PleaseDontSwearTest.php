@@ -1,27 +1,26 @@
 <?php
 /**
- * PleaseDontSwear unit tests
- * PHP Version: 7.4
+ * PleaseDontSwear unit tests.
+ * PHP Version: 7.4.
  *
- * @category Description
- * @package  PleaseDontSwear
- * @author   deoomen <deoomen@protonmail.com>
- * @license  https://opensource.org/licenses/MIT MIT
- * @link     https://github.com/deoomen/please-dont-swear
+ * @package PleaseDontSwear
+ * @author  deoomen <deoomen@protonmail.com>
+ * @license https://opensource.org/licenses/MIT MIT
+ * @link    https://github.com/deoomen/please-dont-swear
  */
 
 use PHPUnit\Framework\TestCase;
 use PleaseDontSwear\PleaseDontSwear;
 
 /**
- * PleaseDontSwear unit tests class
+ * PleaseDontSwear unit tests class.
  */
 class PleaseDontSwearTest extends TestCase
 {
     private $_PleaseDontSwear;
 
     /**
-     * Initialize class
+     * Initialize class.
      */
     public function setUp(): void
     {
@@ -29,7 +28,7 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Destroy class
+     * Destroy class.
      */
     public function tearDown(): void
     {
@@ -37,7 +36,7 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Test construct
+     * Test construct.
      *
      * @test
      */
@@ -50,7 +49,7 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Test cases for pl
+     * Test cases in pl for `censor` method.
      */
     public function textPlCensorProvider(): array
     {
@@ -66,7 +65,7 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Test censor method
+     * Test `censor` method.
      *
      * @dataProvider textPlCensorProvider
      */
@@ -78,6 +77,9 @@ class PleaseDontSwearTest extends TestCase
         );
     }
 
+    /**
+     * Test cases in pl for `checkForSwears` method.
+     */
     public function textPlForCheckProvider(): array
     {
         return [
@@ -93,7 +95,7 @@ class PleaseDontSwearTest extends TestCase
     }
 
     /**
-     * Test checkForSwears method
+     * Test `checkForSwears` method.
      *
      * @dataProvider textPlForCheckProvider
      */
