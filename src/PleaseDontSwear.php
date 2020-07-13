@@ -4,7 +4,7 @@
  * PHP Version: 7.4.
  *
  * @package PleaseDontSwear
- * @author  deoomen <deoomen@protonmail.com>
+ * @author  deoomen <deoomen@pm.me>
  * @license https://opensource.org/licenses/MIT MIT
  * @link    https://github.com/deoomen/please-dont-swear
  */
