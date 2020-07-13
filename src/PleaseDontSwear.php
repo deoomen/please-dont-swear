@@ -24,6 +24,11 @@ class PleaseDontSwear
     private array $_swears;
 
     /**
+     * Swears regex pattern.
+     */
+    private ?string $_swearsPattern;
+
+    /**
      * Initially loads dictionary.
      */
     public function __construct()
@@ -31,6 +36,16 @@ class PleaseDontSwear
         $this->_swears = \json_decode(
             \file_get_contents(__DIR__ . '/swears-pl.json')
         );
+
+        $this->_swearsPattern = null;
+    }
+
+    /**
+     * Prepare swears regex pattern from array of swears.
+     */
+    private function _prepareSwearsPattern(): void
+    {
+        $this->_swearsPattern = '/\b(' . \implode('|', $this->_swears) . '})\b/i';
     }
 
     /**
@@ -71,12 +86,10 @@ class PleaseDontSwear
      */
     public function checkForSwears(string $text): bool
     {
-        foreach ($this->_swears as $swear) {
-            if (\preg_match("/\b{$swear}\b/i", $text) === 1) {
-                return true;
-            }
+        if ($this->_swearsPattern === null) {
+            $this->_prepareSwearsPattern();
         }
 
-        return false;
+        return \preg_match($this->_swearsPattern, $text) === 1;
     }
 }
