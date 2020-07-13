@@ -14,7 +14,7 @@ namespace PleaseDontSwear;
 /**
  * PleaseDontSwear main class.
  *
- * @version Release: 1.0.0
+ * @version Release: 1.1.0
  */
 class PleaseDontSwear
 {
